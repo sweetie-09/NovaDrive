@@ -57,4 +57,4 @@ The final output is a functional website where:
 
 ## Conclusion
 
-The NovaDrive Motors project successfully demonstrates the development of an interactive and responsive website using basic web technologies. It provides a complete platform for users to explore cars and interact with showroom services while showcasing practical web development skills and teamwork.
+The NovaDrive project successfully demonstrates the development of an interactive and responsive website using basic web technologies. It provides a complete platform for users to explore cars and interact with showroom services while showcasing practical web development skills and teamwork.
