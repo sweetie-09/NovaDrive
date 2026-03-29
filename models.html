@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NovaDrive | New Models</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* VIDEO BACKGROUND */#bg-video{
+    filter: brightness(1.15) contrast(1.15) saturate(1.2);
+}
+
+#bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-3;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.video-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(2,6,23,0.35);
+    z-index:-2;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    color:#e5e7eb;
+}
+
+
+/* =============================== */
+/* BOOKING SIDEBAR PANEL */
+/* =============================== */
+.booking-form textarea{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #1e293b;
+    background:#0f172a;
+    color:white;
+}
+
+#successMessage{
+    font-weight:600;
+}
+
+.booking-panel{
+    position:fixed;
+    top:0;
+    right:-420px;
+    width:400px;
+    height:100%;
+    background:#020617;
+    box-shadow:-10px 0 40px rgba(0,0,0,0.7);
+    padding:30px;
+    z-index:6000;
+    transition:0.4s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.booking-panel.active{
+    right:0;
+}
+
+.booking-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.booking-header h3{
+    color:#38bdf8;
+}
+
+.booking-header span{
+    cursor:pointer;
+    font-size:22px;
+}
+
+.booking-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.booking-form label{
+    font-size:14px;
+    color:#94a3b8;
+}
+
+.booking-form input,
+.booking-form select{
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #1e293b;
+    background:#0f172a;
+    color:white;
+}
+
+.booking-form button{
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:#38bdf8;
+    color:#020617;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.booking-form button:hover{
+    opacity:0.9;
+}
+/* Fix form fields stacking properly */
+.booking-form select,
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    display: block;
+}
+
+#advancedFields {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ========================= */
+/* HEADLIGHT INTRO           */
+/* ========================= */
+#intro{
+    position:fixed;
+    inset:0;
+    background:black;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:5000;
+    animation:fadeOut 1s ease forwards;
+    animation-delay:4.8s;
+}
+
+.headlights{
+    display:flex;
+    gap:80px;
+}
+
+.eye{
+    width:140px;
+    height:40px;
+    background:#38bdf8;
+    border-radius:25px;
+    opacity:0;
+    filter:blur(10px);
+    animation:eyeOpen 1.4s ease forwards;
+}
+
+.eye.right{ animation-delay:0.6s; }
+
+#intro h1{
+    margin-top:30px;
+    letter-spacing:4px;
+    color:#38bdf8;
+    opacity:0;
+    animation:textShow 1s ease forwards;
+    animation-delay:2.5s;
+}
+
+@keyframes eyeOpen{
+    to{
+        opacity:1;
+        box-shadow:0 0 50px #38bdf8,0 0 90px rgba(56,189,248,0.8);
+    }
+}
+@keyframes textShow{ to{opacity:1;} }
+@keyframes fadeOut{ to{opacity:0;visibility:hidden;} }
+
+/* ========================= */
+/* PAGE CONTENT              */
+/* ========================= */
+header{
+    padding:20px 8%;
+    background:#020617;
+    border-bottom:1px solid #1e293b;
+}
+header h2{ color:#38bdf8; }
+
+section{
+    padding:70px 8%;
+}
+
+.models{
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+}
+
+
+.card{
+    display:grid;
+    grid-template-columns:45% 55%;
+    min-height:360px;
+    background:#020617;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #1e293b;
+    transition:0.35s ease;
+}
+
+.card:hover{
+    transform:scale(1.015);
+    border-color:#38bdf8;
+    box-shadow:0 25px 60px rgba(0,0,0,0.7);
+}
+
+
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+}
+
+.card .content{
+    padding:20px;
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.specs{
+    font-size:14px;
+    line-height:1.6;
+    color:#cbd5f5;
+}
+
+.buttons{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+}
+
+.buttons button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.book-now{
+    background:#38bdf8;
+    color:#020617;
+}
+
+.book-slot{
+    background:#1e293b;
+    color:#e5e7eb;
+}
+
+.buttons button:hover{
+    opacity:0.9;
+}
+
+/* hide site initially */
+body > *:not(#intro){
+    opacity:0;
+    animation:showSite 1s ease forwards;
+    animation-delay:5s;
+}
+@keyframes showSite{ to{opacity:1;} }
+</style>
+</head>
+
+<body>
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="C:\Users\SASHANK\Downloads\WhatsApp Video 2026-02-09 at 1.47.11 AM (online-video-cutter.com).mp4">
+    Your browser does not support the video tag.
+</video>
+
+<div class="video-overlay"></div>
+
+<!-- INTRO -->
+<div id="intro">
+    <div class="headlights">
+        <div class="eye"></div>
+        <div class="eye right"></div>
+    </div>
+    <h1>NEW ARRIVALS</h1>
+</div>
+
+<header>
+    <h2>NovaDrive | New Models & Arrivals</h2>
+</header>
+
+<section>
+<div class="models">
+
+<!-- MODEL 1 -->
+<div class="card">
+<img src="https://cdn.motor1.com/images/mgl/nAyr41/s3/novo-bmw-x1.jpg">
+<div class="content">
+<h3>Nova X1 EV</h3>
+<p class="specs">
+💰 Price: ₹45,00,000<br>
+⚡ Top Speed: 180 km/h<br>
+🔋 Range: 520 km<br>
+🎨 Colors: Black, White, Blue<br>
+🪑 Seating: 5
+</p>
+<p>Luxury electric SUV with AI driving assistance and premium comfort.</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+
+<!-- MODEL 2 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<div class="content">
+<h3>Nova GT Sport</h3>
+<p class="specs">
+💰 Price: ₹78,00,000<br>
+🏎 Top Speed: 320 km/h<br>
+⛽ Mileage: 12 km/l<br>
+🎨 Colors: Red, Black, Grey<br>
+🪑 Seating: 2
+</p>
+<p>High-performance sports car built for speed lovers.</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+
+<!-- MODEL 3 -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
+<div class="content">
+<h3>Nova Eco Sedan</h3>
+<p class="specs">
+💰 Price: ₹22,00,000<br>
+🚗 Top Speed: 190 km/h<br>
+⛽ Mileage: 25 km/l<br>
+🎨 Colors: Silver, Blue, White<br>
+🪑 Seating: 5
+</p>
+<p>Smart hybrid sedan designed for daily comfort and efficiency.</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+<div class="card">
+<img src="https://static.toyotabharat.com/images/showroom/innova-mmc/unrivaled-upgrades-banner1600x1000.jpg">
+<div class="content">
+<h3>Nova Crysta</h3>
+<p class="specs">
+💰 Price: ₹62,00,000<br>
+⚡ Top Speed: 210 km/h<br>
+🔋 Range: 650 km<br>
+🎨 Colors: Midnight Black, Pearl White, Royal Blue<br>
+🪑 Seating: 5
+</p>
+<p>
+A flagship luxury electric sedan crafted for executives.  
+Features adaptive suspension, panoramic glass roof, AI voice assistant, and ultra-silent cabin technology for a first-class driving experience.
+</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+<div class="card">
+<img src="https://i.ytimg.com/vi/qeKl7jCmHTc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC1KrUan3x7ko4nXJ3re1ae_XUyYg">
+<div class="content">
+<h3>Nova Raptor V8</h3>
+<p class="specs">
+💰 Price: ₹1,20,00,000<br>
+🏎 Top Speed: 350 km/h<br>
+⛽ Mileage: 8 km/l<br>
+🎨 Colors: Matte Black, Racing Red, Carbon Grey<br>
+🪑 Seating: 2
+</p>
+<p>
+Built for pure dominance. Twin-turbo V8 engine, carbon-fiber body, launch control, and track-level aerodynamics make this NovaDrive’s fastest creation ever.
+</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+<div class="card">
+<img src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/123643/bolero-neo-plus-exterior-right-front-three-quarter-2.png?isig=0&q=80&q=80">
+<div class="content">
+<h3>Nova Bolero</h3>
+<p class="specs">
+💰 Price: ₹38,00,000<br>
+🚙 Top Speed: 200 km/h<br>
+⛽ Mileage: 26 km/l<br>
+🎨 Colors: Forest Green, White, Grey<br>
+🪑 Seating: 7
+</p>
+<p>
+Designed for families and long journeys.  
+Combines electric efficiency with petrol power, offers advanced safety systems, 360° camera, and massive interior space.
+</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Vayve-Mobility/Eva/9679/1738309894961/exterior-image-166.jpg">
+<div class="content">
+<h3>Nova City EV</h3>
+<p class="specs">
+💰 Price: ₹18,00,000<br>
+⚡ Top Speed: 150 km/h<br>
+🔋 Range: 380 km<br>
+🎨 Colors: Yellow, White, Sky Blue<br>
+🪑 Seating: 4
+</p>
+<p>
+Perfect for city life. Compact design, fast charging support, smart infotainment, and extremely low running cost make it ideal for urban commuters.
+</p>
+<div class="buttons">
+<button class="book-now">Direct Booking</button>
+<button class="book-slot">Book Showroom Slot</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- BOOKING SIDEBAR -->
+<div class="booking-panel" id="bookingPanel">
+    <div class="booking-header">
+        <h3 id="bookingTitle">Book Nova</h3>
+        <span onclick="closeBooking()">✕</span>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+
+    <label>Select Location</label>
+    <select required>
+        <option value="">Choose City</option>
+        <option>Hyderabad</option>
+        <option>Bangalore</option>
+        <option>Chennai</option>
+        <option>Mumbai</option>
+    </select>
+
+    <label>Select Date</label>
+    <input type="date" required>
+
+    <label>Your Name</label>
+    <input type="text" placeholder="Enter your name" required>
+
+    <label>Phone Number</label>
+    <input type="tel" placeholder="Enter phone number" required>
+
+    <!-- ADVANCED FIELDS -->
+    <div id="advancedFields">
+
+        <label>Full Address</label>
+        <textarea id="addressField" rows="3" 
+        placeholder="Enter your full address"></textarea>
+
+        <label>Payment Method</label>
+        <select id="paymentMethod">
+            <option value="">Choose Payment Method</option>
+            <option value="upi">UPI</option>
+            <option value="card">Credit / Debit Card</option>
+            <option value="cash">Pay at Showroom</option>
+        </select>
+
+        <!-- Dynamic Payment Fields -->
+        <div id="paymentDetails"></div>
+
+    </div>
+
+    <button type="submit">Confirm Booking</button>
+
+    <div id="successMessage" style="display:none; color:#38bdf8; margin-top:10px;">
+        ✅ Booking Confirmed Successfully!
+    </div>
+
+</form>
+
+
+</div>
+
+<script>
+
+// Remove intro after animation
+setTimeout(()=>{
+    document.getElementById("intro")?.remove();
+    document.querySelector(".video-overlay").style.background =
+        "rgba(2,6,23,0.4)";
+},5200);
+
+// ================================
+// BOOKING PANEL LOGIC
+// ================================
+
+const bookingPanel = document.getElementById("bookingPanel");
+const bookingTitle = document.getElementById("bookingTitle");
+const paymentMethod = document.getElementById("paymentMethod");
+const paymentDetails = document.getElementById("paymentDetails");
+const bookingForm = document.getElementById("bookingForm");
+const successMessage = document.getElementById("successMessage");
+
+// Open Booking
+function openBooking(modelName,type){
+    bookingPanel.classList.add("active");
+    bookingTitle.innerText = type + " - " + modelName;
+
+    const advancedFields = document.getElementById("advancedFields");
+
+    if(type === "Showroom Slot Booking"){
+        advancedFields.style.display = "none";
+    } else {
+        advancedFields.style.display = "block";
+    }
+}
+
+
+// Close Booking
+function closeBooking(){
+    bookingPanel.classList.remove("active");
+    successMessage.style.display = "none";
+    bookingForm.reset();
+    paymentDetails.innerHTML = "";
+    document.getElementById("advancedFields").style.display = "block";
+}
+
+
+// Attach Click Events
+document.querySelectorAll(".book-now").forEach(btn=>{
+    btn.addEventListener("click",function(){
+        const modelName = this.closest(".content").querySelector("h3").innerText;
+        openBooking(modelName,"Direct Booking");
+    });
+});
+
+document.querySelectorAll(".book-slot").forEach(btn=>{
+    btn.addEventListener("click",function(){
+        const modelName = this.closest(".content").querySelector("h3").innerText;
+        openBooking(modelName,"Showroom Slot Booking");
+    });
+});
+
+// Payment Dynamic Fields
+paymentMethod.addEventListener("change",function(){
+
+    paymentDetails.innerHTML = "";
+
+    if(this.value === "upi"){
+        paymentDetails.innerHTML = `
+            <label>Enter UPI ID</label>
+            <input type="text" placeholder="example@upi" required>
+        `;
+    }
+    else if(this.value === "card"){
+        paymentDetails.innerHTML = `
+            <label>Card Number</label>
+            <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
+            <label>Expiry Date</label>
+            <input type="month" required>
+            <label>CVV</label>
+            <input type="password" maxlength="3" required>
+        `;
+    }
+});
+
+// Submit Booking
+bookingForm.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    successMessage.style.display = "block";
+
+    setTimeout(()=>{
+        closeBooking();
+    },2000);
+});
+
+</script>
+
+
+
+</body>
+</html>
