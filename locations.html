@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NovaDrive | Real Showroom Locations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    .image-slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.image-slider img.active{
+    opacity: 1;
+}
+
+.image-slider button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.image-slider .prev{
+    left: 15px;
+}
+
+.image-slider .next{
+    right: 15px;
+}
+
+.image-slider button:hover{
+    background: rgba(56,189,248,0.9);
+}
+
+    #bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.25; /* cinematic background */
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background:#0f172a;
+    color:#e5e7eb;
+}
+header{
+    background:#020617;
+    padding:18px 8%;
+    border-bottom:1px solid #1e293b;
+}
+header h1{
+    color:#38bdf8;
+}
+section{
+    padding:70px 8%;
+}
+header, section {
+    position: relative;
+    z-index: 1;
+}
+section h2{
+    text-align:center;
+    font-size:38px;
+    color:#38bdf8;
+    margin-bottom:50px;
+}
+.showroom{
+    display:grid;
+    grid-template-columns:45% 55%;
+    gap:30px;
+    background:#020617;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #1e293b;
+    margin-bottom:50px;
+}
+.showroom img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.content{
+    padding:35px;
+}
+.content h3{
+    color:#38bdf8;
+    font-size:26px;
+    margin-bottom:15px;
+}
+.content p{
+    line-height:1.7;
+    color:#cbd5f5;
+    margin-bottom:20px;
+}
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+.buttons a{
+    padding:12px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    transition:0.3s;
+}
+.map{
+    background:#38bdf8;
+    color:#020617;
+}
+.dir{
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+}
+.buttons a:hover{
+    transform:scale(1.05);
+}
+iframe{
+    width:100%;
+    height:280px;
+    border:none;
+    border-radius:12px;
+}
+@media(max-width:900px){
+    .showroom{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<!-- VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="C:\Users\SASHANK\Downloads\13190356_3840_2160_24fps.mp4" type="video/mp4" type="video/mp4">
+</video>
+
+<header>
+    <h1>NovaDrive | Showroom Locations</h1>
+</header>
+
+<section>
+<h2>Visit Our Real Showrooms</h2>
+
+<!-- NovaDrive Hyderabad -->
+<div class="showroom">
+    <div class="image-slider">
+    <img src="https://content3.jdmagicbox.com/v2/comp/hyderabad/e4/040pxx40.xx40.241223201519.k9e4/catalogue/mody-byd-banjara-hills-hyderabad-car-dealers-qsqn6cyf39.jpg" >
+    <img src="https://business-world-image-bucket.s3.ap-south-1.amazonaws.com/Vehicle%20Fleet%20at%20Toyota%20Used%20Car%20Outlet%20(TUCO)%20in%20New%20Delhi.jpg" class="active">
+    <img src="https://i.ytimg.com/vi/qeKl7jCmHTc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC1KrUan3x7ko4nXJ3re1ae_XUyYg">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+    <div class="content">
+        <h3>NovaDrive Kun Exclusive – Hyderabad</h3>
+        <p>
+            Located at <b>Plot No. 1-11-249/1, Begumpet, Hyderabad – 500016</b>,
+            NovaDrive Kun Exclusive is an authorized NovaDrive dealership offering premium
+            car sales, test drives, certified service center, and customer lounge.
+        </p>
+        <div class="buttons">
+            <a class="map" href="https://www.google.com/maps?q=NovaDrive+Kun+Exclusive+Begumpet+Hyderabad" target="_blank">View on Map</a>
+            <a class="dir" href="https://www.google.com/maps/dir/current+location/NovaDrive+Kun+Exclusive+Begumpet+Hyderabad" target="_blank">Get Directions</a>
+        </div>
+        <iframe src="https://www.google.com/maps?q=NovaDrive+Kun+Exclusive+Begumpet+Hyderabad&output=embed"></iframe>
+    </div>
+</div>
+
+<!-- NovaDrive Hyderabad -->
+<div class="showroom">
+    <div class="image-slider">
+    <img src="https://dotyumzonirqv.cloudfront.net/publish/wp-content/uploads/2020/08/Jaguar-Land-Rover-South-West-London-interior-Aug-2020-scaled.jpg" class="active">
+    <img src="https://www.automotivekia.in/wp-content/uploads/2024/08/Showroom-520-X-655_.jpg">
+    <img src="https://apollointeriors.com/wp-content/uploads/2019/01/Lamborghini-showroom-018-1024x633-1.jpg">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+
+    <div class="content">
+        <h3>NovaDrive-Benz Silver Star – Hyderabad</h3>
+        <p>
+            Situated at <b>MB Tower, Madhapur, Hyderabad – 500081</b>,
+            Silver Star is a luxury NovaDrive-Benz showroom providing new car sales,
+            authorized service, accessories, and premium ownership experience.
+        </p>
+        <div class="buttons">
+            <a class="map" href="https://www.google.com/maps?q=NovaDrive+Benz+Silver+Star+Madhapur" target="_blank">View on Map</a>
+            <a class="dir" href="https://www.google.com/maps/dir/current+location/NovaDrive+Benz+Silver+Star+Madhapur" target="_blank">Get Directions</a>
+        </div>
+        <iframe src="https://www.google.com/maps?q=NovaDrive+Benz+Silver+Star+Madhapur&output=embed"></iframe>
+    </div>
+</div>
+
+<!-- NovaDrive Bengaluru -->
+<div class="showroom">
+<div class="image-slider">
+    <img src="https://www.commercialinteriordesign.com/public/article_embed_images/Car-Showroom-2.jpg" class="active">
+    <img src="https://apollointeriors.com/wp-content/uploads/2019/01/Ferrari-Showroom.jpg">
+    <img src="https://res.cloudinary.com/dw4e01qx8/f_auto,q_auto/images/xsyrwgjkamuqn3ro5seq">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+    <div class="content">
+        <h3>NovaDrive Bengaluru Central</h3>
+        <p>
+            Located at <b>Hosur Road, Near Dairy Circle, Bengaluru – 560029</b>,
+            NovaDrive Bengaluru Central showcases luxury sedans, SUVs, sports cars,
+            test drive facilities, and authorized service support.
+        </p>
+        <div class="buttons">
+            <a class="map" href="https://www.google.com/maps?q=NovaDrive+Bengaluru+Central" target="_blank">View on Map</a>
+            <a class="dir" href="https://www.google.com/maps/dir/?api=1&destination=222+Whitefield+Main+Road+Sadaramangala+Bangalore+560048" target="_blank">Get Directions</a>
+        </div>
+        <iframe src="https://www.google.com/maps?q=NovaDrive+Bengaluru+Central&output=embed"></iframe>
+    </div>
+</div>
+
+<!-- NovaDrive Mumbai -->
+<div class="showroom">
+<div class="image-slider">
+    <img src="https://mir-s3-cdn-cf.behance.net/projects/404/cc1552198468263.Y3JvcCwxMDQzLDgxNiwyMDYsMA.jpg" class="active">
+    <img src="https://images.unsplash.com/photo-1625510874369-c21e25f99360?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D">
+    <img src="https://cdn.dribbble.com/userupload/24424898/file/original-bb3f5b674fdd3f319b488e8322b7d581.jpg">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+    <div class="content">
+        <h3>NovaDrive-Benz Shaman – Mumbai</h3>
+        <p>
+            Located at <b>Kalina, Santacruz East, Mumbai – 400098</b>,
+            Shaman Motors is a renowned NovaDrive-Benz dealership offering luxury
+            vehicles, service center, accessories, and test drives.
+        </p>
+        <div class="buttons">
+            <a class="map" href="https://www.google.com/maps?q=NovaDrive+Benz+Shaman+Kalina+Mumbai" target="_blank">View on Map</a>
+            <a class="dir" href="https://www.google.com/maps/dir/?api=1&destination=Dr+Annie+Besant+Road+Worli+Mumbai+400018" target="_blank">Get Directions</a>
+        </div>
+        <iframe src="https://www.google.com/maps?q=NovaDrive+Benz+Shaman+Kalina+Mumbai&output=embed"></iframe>
+    </div>
+</div>
+<!-- NovaDrive Chennai -->
+<div class="showroom">
+    <div class="image-slider">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/3/402538723/OX/LA/DX/24281285/car-showroom-interior-designing-services.jpg" >
+        <img src="https://s3.amazonaws.com/arcb_project/2079727162/665099/thumbs/Night1scene91_mo.jpg"class="active">
+        <img src="https://archello.s3.eu-central-1.amazonaws.com/images/2020/02/18/1showrm.1582040396.6434.jpg " >
+
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <div class="content">
+        <h3>NovaDrive-Benz Sundaram Motors – Chennai</h3>
+        <p>
+            Located at <b>No. 180, Anna Salai, Teynampet, Chennai – 600018</b>,
+            Sundaram Motors is an authorized NovaDrive-Benz dealership offering
+            luxury vehicle sales, certified service center, genuine accessories,
+            and premium customer experience.
+        </p>
+
+        <div class="buttons">
+            <a class="map"
+               href="https://www.google.com/maps?q=NovaDrive+Benz+Sundaram+Motors+Anna+Salai+Chennai"
+               target="_blank">
+               View on Map
+            </a>
+
+            <a class="dir"
+               href="https://www.google.com/maps/dir/?api=1&destination=20+GST+Road+Meenambakkam+Chennai+600027"
+               target="_blank">
+               Get Directions
+            </a>
+        </div>
+
+        <iframe
+            src="https://www.google.com/maps?q=NovaDrive+Benz+Sundaram+Motors+Anna+Salai+Chennai&output=embed">
+        </iframe>
+    </div>
+</div>
+
+
+</section>
+<script>
+document.querySelectorAll('.image-slider').forEach(slider => {
+    let images = slider.querySelectorAll('img');
+    let index = 0;
+
+    slider.querySelector('.next').onclick = () => {
+        images[index].classList.remove('active');
+        index = (index + 1) % images.length;
+        images[index].classList.add('active');
+    };
+
+    slider.querySelector('.prev').onclick = () => {
+        images[index].classList.remove('active');
+        index = (index - 1 + images.length) % images.length;
+        images[index].classList.add('active');
+    };
+});
+</script>
+
+</body>
+</html>
+
